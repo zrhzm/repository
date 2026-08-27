@@ -1,37 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /* =====================================
-       기부 버튼
+       기부
     ===================================== */
 
     const donationButton =
-        document.getElementById("donationButton");
-
-    const donationSection =
-        document.getElementById("donationSection");
-
-
-    if (donationButton && donationSection) {
-
-        donationButton.addEventListener(
-            "click",
-            () => {
-
-                donationSection.hidden = false;
-
-                donationSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
+        document.getElementById(
+            "donationButton"
         );
 
-    }
+    const donationSection =
+        document.getElementById(
+            "donationSection"
+        );
+
+
+    donationButton.addEventListener(
+        "click",
+        () => {
+
+            donationSection.hidden = false;
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+    );
 
 
     /* =====================================
-       점프스케어 버튼
+       점프스케어
     ===================================== */
 
     const jumpscareButton =
@@ -44,27 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
             "jumpscareSection"
         );
 
-
-    if (
-        jumpscareButton &&
-        jumpscareSection
-    ) {
-
-        jumpscareButton.addEventListener(
-            "click",
-            () => {
-
-                jumpscareSection.hidden = false;
-
-                jumpscareSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
+    const jumpscareVideo =
+        document.querySelector(
+            ".jumpscare-video"
         );
 
-    }
+
+    jumpscareButton.addEventListener(
+        "click",
+        () => {
+
+            jumpscareSection.hidden = false;
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+    );
 
 
     /* =====================================
@@ -84,21 +79,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 () => {
 
-                    const section =
+                    const overlay =
                         button.closest(
-                            ".popup-section"
+                            ".fullscreen-overlay"
                         );
 
-                    if (!section) {
+
+                    if (!overlay) {
                         return;
                     }
 
-                    section.hidden = true;
 
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
+                    overlay.hidden = true;
+
+
+                    document.body.style.overflow =
+                        "";
+
+
+                    /* 영상 정지 */
+
+                    if (
+                        overlay.id ===
+                        "jumpscareSection" &&
+                        jumpscareVideo
+                    ) {
+
+                        jumpscareVideo.pause();
+
+                        jumpscareVideo.currentTime =
+                            0;
+
+                    }
 
                 }
             );
@@ -108,51 +120,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       페이지 이동 Fade 효과
+       ESC로 닫기
     ===================================== */
 
-    const internalLinks =
-        document.querySelectorAll(
-            'a[href$=".html"]'
-        );
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key !== "Escape"
+            ) {
+                return;
+            }
 
 
-    internalLinks.forEach(
-        (link) => {
-
-            link.addEventListener(
-                "click",
-                (event) => {
-
-                    const destination =
-                        link.href;
-
-                    if (
-                        !destination ||
-                        destination.startsWith("#")
-                    ) {
-                        return;
-                    }
+            const overlays =
+                document.querySelectorAll(
+                    ".fullscreen-overlay"
+                );
 
 
-                    event.preventDefault();
+            overlays.forEach(
+                (overlay) => {
 
-
-                    document.body.classList.add(
-                        "fade-out"
-                    );
-
-
-                    setTimeout(
-                        () => {
-                            window.location.href =
-                                destination;
-                        },
-                        400
-                    );
+                    overlay.hidden = true;
 
                 }
             );
+
+
+            document.body.style.overflow =
+                "";
+
+
+            if (jumpscareVideo) {
+
+                jumpscareVideo.pause();
+
+                jumpscareVideo.currentTime =
+                    0;
+
+            }
+
+        }
+    );
+
+
+    /* =====================================
+       상단 메뉴
+       
+       네 메뉴 전부 동일하게
+       ㅗ 표시
+    ===================================== */
+
+    const menuButtons =
+        document.querySelectorAll(
+            ".menu-button"
+        );
+
+    const menuMessage =
+        document.getElementById(
+            "menuMessage"
+        );
+
+
+    menuButtons.forEach(
+        (button) => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    menuMessage.hidden =
+                        false;
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================
+       ㅗ 화면 클릭하면 홈으로 돌아오기
+    ===================================== */
+
+    menuMessage.addEventListener(
+        "click",
+        () => {
+
+            menuMessage.hidden =
+                true;
+
+            document.body.style.overflow =
+                "";
 
         }
     );
