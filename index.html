@@ -6,7 +6,8 @@
 
   <title>HAAAI ^_^</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <!-- style.css는 index.html과 같은 폴더 -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -82,6 +83,7 @@
       >
 
         <!-- BACKGROUND VIDEO -->
+        <!-- 배경 영상: videos/background.mp4 -->
         <video
           class="background-video"
           autoplay
@@ -91,10 +93,12 @@
           preload="auto"
           aria-hidden="true"
         >
-          <source src="assets/videos/background.mp4" type="video/mp4">
+          <source
+            src="videos/background.mp4"
+            type="video/mp4"
+          >
         </video>
 
-        <!-- 영상 위 밝은 오버레이 -->
         <div class="background-overlay"></div>
 
 
@@ -184,7 +188,7 @@
         <div class="donation-image-wrapper">
 
           <img
-            src="assets/images/plz.jpg"
+            src="videos/plz.jpg"
             alt="기부 이미지"
             class="donation-image"
           >
@@ -222,7 +226,7 @@
           >
 
             <source
-              src="assets/videos/ohoh.mp4"
+              src="videos/ohoh.mp4"
               type="video/mp4"
             >
 
@@ -239,7 +243,8 @@
   </div>
 
 
-  <script src="js/script.js"></script>
+  <!-- script.js는 index.html과 같은 폴더 -->
+  <script src="script.js"></script>
 
 </body>
 </html>
