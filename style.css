@@ -41,7 +41,61 @@ body {
         0.4s
         ease;
 }
+/* =========================================
+   메뉴 클릭 시 표시되는 ㅗ
+========================================= */
 
+.menu-message {
+
+    position: fixed;
+
+    z-index: 40;
+
+    top: 78px;
+
+    right: 0;
+
+    bottom: 0;
+
+    left: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size:
+        clamp(
+            80px,
+            20vw,
+            200px
+        );
+
+    animation:
+        messageIn
+        0.2s
+        ease;
+
+    cursor: pointer;
+}
+
+
+/* 모바일에서는 HEADER가 더 작기 때문에 위치 변경 */
+
+@media (max-width: 720px) {
+
+    .menu-message {
+
+        top: 68px;
+
+    }
+
+}
 
 /* hidden 속성이 CSS 때문에 무시되는 문제 방지 */
 
