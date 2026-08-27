@@ -884,3 +884,24 @@ a {
     }
 
 }
+
+/* =========================================
+   페이지 나가기 Fade
+========================================= */
+
+body.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
