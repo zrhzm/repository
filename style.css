@@ -681,13 +681,10 @@ body {
    ========================================= */
 
 .donation-image-wrapper {
-
-  position: relative;
-
-  width: min(
-    100%,
-    850px
-  );
+   position: relative;
+   display: inline-block;
+   max-width: 90%;
+}
 
   overflow: hidden;
 
