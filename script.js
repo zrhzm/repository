@@ -201,29 +201,23 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
 
   jumpscareButton.addEventListener(
-    "click",
-    () => {
+  "click",
+  async () => {
 
-      /*
-        중앙 버튼은 새로운 화면으로 전환
-      */
+    showPage(jumpscarePage);
 
-      showPage(jumpscarePage);
+    navButtons.forEach((button) => {
+      button.classList.remove("active");
+    });
 
+    navButtons[0].classList.add("active");
 
-      /*
-        상단 메뉴 active 상태 유지
-      */
-
-      navButtons.forEach((button) => {
-
-        button.classList.remove("active");
-
-      });
-
-      navButtons[0].classList.add("active");
-
+    try {
+      jumpscareVideo.currentTime = 0;
+      await jumpscareVideo.play();
+    } catch (error) {
+      console.log("자동재생이 차단되었습니다.", error);
     }
-  );
 
-});
+  }
+);
