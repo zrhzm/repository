@@ -1033,23 +1033,169 @@ button {
 
 @media (max-width: 720px) {
 
-
     .site-header {
 
-        min-height:
-            auto;
+        min-height: auto;
 
         padding:
             17px
-            20px
-            19px;
+            16px
+            18px;
 
-        flex-direction:
-            column;
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+
+        gap: 12px;
+    }
+
+
+    .logo {
+
+        flex-shrink: 0;
+
+        font-size: 18px;
+
+        text-align: left;
+
+        padding-top: 4px;
+    }
+
+
+    .main-menu {
+
+        flex: 1;
+
+        width: auto;
+
+        justify-content: flex-end;
+
+        flex-wrap: wrap;
 
         gap:
-            12px;
+            8px
+            16px;
     }
+
+
+    .main-menu button {
+
+        font-size: 13px;
+
+        padding:
+            6px
+            0;
+    }
+
+
+    .hero {
+
+        min-height:
+            calc(
+                100svh - 72px
+            );
+
+        padding:
+            90px
+            18px
+            140px;
+    }
+
+
+    .welcome h1 {
+
+        font-size:
+            clamp(
+                50px,
+                17vw,
+                82px
+            );
+    }
+
+
+    .hero-buttons {
+
+        width:
+            88%;
+
+        bottom:
+            10%;
+
+        gap:
+            15px;
+    }
+
+
+    .main-button {
+
+        padding:
+            16px
+            10px;
+
+        font-size:
+            15px;
+
+        border-radius:
+            10px;
+    }
+
+
+    .moving-shape {
+
+        filter:
+            blur(45px);
+    }
+
+
+    .fullscreen-overlay {
+
+        padding:
+            18px;
+    }
+
+
+    .donation-image-container {
+
+        width:
+            100%;
+
+        max-height:
+            75vh;
+    }
+
+
+    .donation-image {
+
+        max-height:
+            75vh;
+    }
+
+
+    .video-container {
+
+        width:
+            100%;
+    }
+
+
+    .jumpscare-video {
+
+        max-height:
+            75vh;
+    }
+
+
+    .site-footer {
+
+        padding:
+            22px
+            20px
+            26px;
+    }
+
+}
 
 
     .logo {
