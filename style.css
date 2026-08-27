@@ -6,16 +6,21 @@
     box-sizing: border-box;
 }
 
-html {
-    margin: 0;
-    padding: 0;
-}
-
+html,
 body {
     margin: 0;
     padding: 0;
 
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+}
+
+body {
+
     background: #ffffff;
+
     color: #111111;
 
     font-family:
@@ -23,19 +28,23 @@ body {
         "Noto Sans KR",
         sans-serif;
 
-    overflow-x: hidden;
-
-    animation: fadeIn 0.4s ease;
+    animation:
+        fadeIn 0.4s ease;
 }
 
 
 /* =========================================
-   링크
+   링크 / 버튼 기본
 ========================================= */
 
 a {
     color: inherit;
+
     text-decoration: none;
+}
+
+button {
+    font-family: inherit;
 }
 
 
@@ -44,39 +53,56 @@ a {
 ========================================= */
 
 .site-header {
+
     position: relative;
-    z-index: 20;
+
+    z-index: 50;
 
     width: 100%;
 
-    min-height: 76px;
+    min-height: 78px;
 
     padding:
         0
-        clamp(24px, 5vw, 70px);
+        clamp(22px, 5vw, 70px);
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 40px;
 
-    background: #000000;
+    background: #050505;
+
     color: #ffffff;
 }
 
 
-/* 사이트 이름 */
+/* HOME */
 
 .logo {
+
     flex-shrink: 0;
 
-    font-size: clamp(18px, 2vw, 25px);
+    font-size:
+        clamp(
+            18px,
+            2vw,
+            25px
+        );
 
     font-weight: 600;
 
-    letter-spacing: 0.02em;
+    transition:
+        opacity 0.2s ease;
+}
+
+
+.logo:hover {
+
+    opacity: 0.65;
 }
 
 
@@ -85,26 +111,39 @@ a {
 ========================================= */
 
 .main-menu {
+
     display: flex;
 
     align-items: center;
 
     justify-content: flex-end;
 
-    gap: clamp(
-        25px,
-        6vw,
-        85px
-    );
+    flex-wrap: wrap;
+
+    gap:
+        clamp(
+            20px,
+            5vw,
+            75px
+        );
 }
 
 
-.main-menu a {
+/* 메뉴 버튼 */
+
+.menu-button {
+
     position: relative;
 
-    display: inline-block;
+    padding:
+        8px
+        0;
 
-    padding: 8px 0;
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
 
     font-size:
         clamp(
@@ -113,32 +152,35 @@ a {
             18px
         );
 
-    white-space: nowrap;
+    cursor: pointer;
 }
 
 
 /* 밑줄 */
 
-.main-menu a::after {
+.menu-button::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     bottom: 1px;
 
     width: 0;
-    height: 1px;
+
+    height: 2px;
 
     background: #ffffff;
 
     transition:
-        width 0.3s ease;
+        width 0.35s ease;
 }
 
 
-.main-menu a:hover::after,
-.main-menu a:focus-visible::after {
+.menu-button:hover::after {
+
     width: 100%;
 }
 
@@ -148,6 +190,7 @@ a {
 ========================================= */
 
 .hero {
+
     position: relative;
 
     isolation: isolate;
@@ -155,13 +198,11 @@ a {
     width: 100%;
 
     min-height:
-        calc(100vh - 76px);
+        calc(100vh - 78px);
 
     overflow: hidden;
 
     display: flex;
-
-    flex-direction: column;
 
     align-items: center;
 
@@ -170,56 +211,104 @@ a {
     padding:
         100px
         25px
-        150px;
+        170px;
 
-    background: #e7e7e7;
+    background:
+        #d0d0d0;
 }
 
 
 /* =========================================
-   움직이는 배경 형태
+   움직이는 배경
 ========================================= */
 
 .moving-shape {
+
     position: absolute;
 
     z-index: -1;
 
     border-radius:
-        45%
-        55%
-        60%
-        40%
-        /
-        50%
-        40%
-        60%
         50%;
 
-    background: #bdbdbd;
+    background:
+        #8f8f8f;
 
-    opacity: 0.45;
+    opacity:
+        0.62;
 
-    filter: blur(75px);
+    filter:
+        blur(55px);
 
-    will-change: transform;
+    will-change:
+        transform;
+
+    pointer-events:
+        none;
 }
 
 
-/* 첫 번째 */
+/* 큰 형태 1 */
 
 .shape-1 {
-    width: 48vw;
-    height: 48vw;
 
-    max-width: 650px;
-    max-height: 650px;
+    width:
+        52vw;
 
-    top: -20%;
-    left: -12%;
+    height:
+        52vw;
+
+    max-width:
+        700px;
+
+    max-height:
+        700px;
+
+    top:
+        -25%;
+
+    left:
+        -15%;
 
     animation:
         moveShape1
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* 큰 형태 2 */
+
+.shape-2 {
+
+    width:
+        48vw;
+
+    height:
+        48vw;
+
+    max-width:
+        650px;
+
+    max-height:
+        650px;
+
+    top:
+        -5%;
+
+    right:
+        -15%;
+
+    background:
+        #777777;
+
+    opacity:
+        0.58;
+
+    animation:
+        moveShape2
         21s
         ease-in-out
         infinite
@@ -227,69 +316,74 @@ a {
 }
 
 
-/* 두 번째 */
-
-.shape-2 {
-    width: 44vw;
-    height: 44vw;
-
-    max-width: 600px;
-    max-height: 600px;
-
-    top: 5%;
-    right: -12%;
-
-    background: #a8a8a8;
-
-    animation:
-        moveShape2
-        25s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-/* 세 번째 */
+/* 형태 3 */
 
 .shape-3 {
-    width: 50vw;
-    height: 42vw;
 
-    max-width: 700px;
-    max-height: 580px;
+    width:
+        55vw;
 
-    bottom: -25%;
-    left: 20%;
+    height:
+        45vw;
 
-    background: #c8c8c8;
+    max-width:
+        750px;
+
+    max-height:
+        600px;
+
+    bottom:
+        -30%;
+
+    left:
+        15%;
+
+    background:
+        #999999;
+
+    opacity:
+        0.55;
 
     animation:
         moveShape3
-        28s
+        24s
         ease-in-out
         infinite
         alternate;
 }
 
 
-/* 네 번째 */
+/* 형태 4 */
 
 .shape-4 {
-    width: 35vw;
-    height: 35vw;
 
-    max-width: 480px;
-    max-height: 480px;
+    width:
+        40vw;
 
-    bottom: 0;
-    right: 20%;
+    height:
+        40vw;
 
-    background: #b2b2b2;
+    max-width:
+        550px;
+
+    max-height:
+        550px;
+
+    right:
+        15%;
+
+    bottom:
+        -10%;
+
+    background:
+        #707070;
+
+    opacity:
+        0.48;
 
     animation:
         moveShape4
-        23s
+        20s
         ease-in-out
         infinite
         alternate;
@@ -301,6 +395,7 @@ a {
 ========================================= */
 
 .welcome {
+
     position: relative;
 
     z-index: 5;
@@ -310,20 +405,23 @@ a {
 
 
 .small-label {
+
     margin:
         0
         0
         20px;
 
-    font-size: 12px;
+    font-size: 13px;
 
     font-weight: 700;
 
-    letter-spacing: 0.2em;
+    letter-spacing:
+        0.2em;
 }
 
 
 .welcome h1 {
+
     margin: 0;
 
     font-size:
@@ -333,27 +431,33 @@ a {
             120px
         );
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    line-height: 0.95;
+    line-height:
+        0.95;
 
-    letter-spacing: -0.05em;
+    letter-spacing:
+        -0.05em;
 }
 
 
 /* =========================================
-   버튼
+   메인 버튼
 ========================================= */
 
 .hero-buttons {
+
     position: absolute;
 
     z-index: 5;
 
     left: 50%;
+
     bottom: 13%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width:
         min(
@@ -373,145 +477,179 @@ a {
 }
 
 
-.main-button,
-.close-button {
-    border: 1px solid #111111;
+.main-button {
 
-    border-radius: 3px;
+    border:
+        1px solid #111111;
 
-    background: #111111;
-
-    color: #ffffff;
+    border-radius:
+        12px;
 
     padding:
-        15px
+        17px
         25px;
 
-    font-size: 16px;
+    background:
+        #111111;
 
-    cursor: pointer;
+    color:
+        #ffffff;
+
+    font-size:
+        17px;
+
+    cursor:
+        pointer;
 
     box-shadow:
-        0 7px 0 #999999;
+        0 8px 0 #666666;
 
     transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
 }
 
 
-.main-button:hover,
-.close-button:hover {
-    transform: translateY(-2px);
+.main-button:hover {
+
+    transform:
+        translateY(-5px);
 
     box-shadow:
-        0 5px 0 #999999;
+        0 4px 0 #666666;
+
+    background:
+        #2b2b2b;
 }
 
 
-.main-button:active,
-.close-button:active {
-    transform: translateY(1px);
+.main-button:active {
+
+    transform:
+        translateY(2px);
 
     box-shadow:
-        0 3px 0 #999999;
+        0 2px 0 #666666;
 }
 
 
 /* =========================================
-   팝업/추가 영역
+   전체화면 Overlay
 ========================================= */
 
-.popup-section {
-    width: 100%;
+.fullscreen-overlay {
+
+    position: fixed;
+
+    z-index: 100;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     padding:
-        80px
-        25px;
+        30px;
 
-    border-top:
-        1px solid #d5d5d5;
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.94
+        );
 
-    background: #ffffff;
+    animation:
+        overlayIn
+        0.25s
+        ease;
 }
 
 
-.popup-content {
+/* Overlay 내부 */
+
+.overlay-content {
+
     width:
         min(
             100%,
-            900px
+            1000px
         );
 
-    margin: 0 auto;
+    max-height:
+        95vh;
 
-    text-align: center;
-}
+    max-height:
+        95svh;
 
+    display: flex;
 
-.section-label {
-    margin:
-        0
-        0
-        25px;
+    flex-direction: column;
 
-    font-size: 12px;
+    align-items: center;
 
-    font-weight: 700;
+    justify-content: center;
 
-    letter-spacing: 0.2em;
+    gap: 25px;
 }
 
 
 /* =========================================
-   기부 이미지
+   기부 사진
 ========================================= */
 
 .donation-image-container {
+
     position: relative;
 
     width:
         min(
             100%,
-            750px
+            850px
         );
 
-    margin: 0 auto 30px;
+    max-height:
+        80vh;
 
     overflow: hidden;
+
+    text-align: center;
 }
 
 
-/* 사진 placeholder */
+.donation-image {
 
-.image-placeholder {
+    display: block;
+
     width: 100%;
 
-    aspect-ratio: 4 / 3;
+    max-height:
+        80vh;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border:
-        1px dashed #888888;
-
-    background: #eeeeee;
-
-    color: #666666;
-
-    font-size: 14px;
+    object-fit:
+        contain;
 }
 
 
-/* 사진 위 텍스트 */
+/* 사진 위 글씨 */
 
 .donation-overlay {
+
     position: absolute;
 
-    top: 50%;
     left: 50%;
+
+    top: 50%;
 
     transform:
         translate(
@@ -521,24 +659,25 @@ a {
 
     width: 90%;
 
-    text-align: center;
-
     color: #ffffff;
 
     font-size:
         clamp(
             18px,
             3vw,
-            32px
+            34px
         );
 
+    text-align:
+        center;
+
     text-shadow:
-        0 1px 8px
+        0 2px 10px
         rgba(
             0,
             0,
             0,
-            0.7
+            0.8
         );
 }
 
@@ -548,42 +687,106 @@ a {
 ========================================= */
 
 .video-container {
+
     width:
         min(
             100%,
-            850px
+            950px
         );
 
-    margin: 0 auto 30px;
+    max-height:
+        80vh;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
 }
 
 
-.video-placeholder {
-    width: 100%;
+.jumpscare-video {
 
-    aspect-ratio: 16 / 9;
+    display:
+        block;
 
-    display: flex;
+    width:
+        100%;
 
-    align-items: center;
-    justify-content: center;
+    max-height:
+        80vh;
 
-    border:
-        1px dashed #888888;
+    object-fit:
+        contain;
 
-    background: #eeeeee;
-
-    color: #666666;
-
-    font-size: 14px;
+    background:
+        #000000;
 }
 
 
 /* =========================================
-   FOOTER
+   닫기 버튼
+========================================= */
+
+.close-button {
+
+    border:
+        1px solid #ffffff;
+
+    border-radius:
+        10px;
+
+    padding:
+        12px
+        28px;
+
+    background:
+        #ffffff;
+
+    color:
+        #111111;
+
+    font-size:
+        15px;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 6px 0 #666666;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.close-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 3px 0 #666666;
+}
+
+
+.close-button:active {
+
+    transform:
+        translateY(1px);
+
+    box-shadow:
+        0 2px 0 #666666;
+}
+
+
+/* =========================================
+   홈 하단 문구
 ========================================= */
 
 .site-footer {
+
     width: 100%;
 
     padding:
@@ -591,23 +794,70 @@ a {
         6vw
         30px;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
-    color: #111111;
+    color:
+        #111111;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 
 .site-footer p {
-    margin: 0;
+
+    margin:
+        0;
 }
 
 
 /* =========================================
-   FADE IN
+   메뉴 클릭 ㅗ
+========================================= */
+
+.menu-message {
+
+    position: fixed;
+
+    z-index: 200;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #ffffff;
+
+    color:
+        #111111;
+
+    font-size:
+        clamp(
+            80px,
+            20vw,
+            200px
+        );
+
+    animation:
+        messageIn
+        0.2s
+        ease;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================
+   Fade
 ========================================= */
 
 @keyframes fadeIn {
@@ -623,13 +873,40 @@ a {
 }
 
 
+@keyframes overlayIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes messageIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
 /* =========================================
-   배경 애니메이션
+   배경 움직임
 ========================================= */
 
 @keyframes moveShape1 {
 
     0% {
+
         transform:
             translate3d(
                 0,
@@ -638,17 +915,20 @@ a {
             )
             rotate(0deg)
             scale(1);
+
     }
 
     100% {
+
         transform:
             translate3d(
-                12%,
-                10%,
+                18%,
+                15%,
                 0
             )
-            rotate(18deg)
-            scale(1.08);
+            rotate(25deg)
+            scale(1.15);
+
     }
 
 }
@@ -657,6 +937,7 @@ a {
 @keyframes moveShape2 {
 
     0% {
+
         transform:
             translate3d(
                 0,
@@ -665,17 +946,20 @@ a {
             )
             rotate(0deg)
             scale(1);
+
     }
 
     100% {
+
         transform:
             translate3d(
-                -15%,
-                13%,
+                -20%,
+                18%,
                 0
             )
-            rotate(-15deg)
-            scale(1.1);
+            rotate(-20deg)
+            scale(1.12);
+
     }
 
 }
@@ -684,6 +968,7 @@ a {
 @keyframes moveShape3 {
 
     0% {
+
         transform:
             translate3d(
                 0,
@@ -692,17 +977,20 @@ a {
             )
             rotate(0deg)
             scale(1);
+
     }
 
     100% {
+
         transform:
             translate3d(
-                -10%,
-                -13%,
+                -15%,
+                -18%,
                 0
             )
-            rotate(20deg)
-            scale(1.06);
+            rotate(25deg)
+            scale(1.12);
+
     }
 
 }
@@ -711,6 +999,7 @@ a {
 @keyframes moveShape4 {
 
     0% {
+
         transform:
             translate3d(
                 0,
@@ -719,17 +1008,20 @@ a {
             )
             rotate(0deg)
             scale(1);
+
     }
 
     100% {
+
         transform:
             translate3d(
-                11%,
-                -10%,
+                18%,
+                -15%,
                 0
             )
-            rotate(-20deg)
-            scale(1.1);
+            rotate(-25deg)
+            scale(1.14);
+
     }
 
 }
@@ -741,42 +1033,50 @@ a {
 
 @media (max-width: 720px) {
 
+
     .site-header {
-        min-height: auto;
+
+        min-height:
+            auto;
 
         padding:
-            18px
+            17px
             20px
-            20px;
+            19px;
 
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        gap: 12px;
+        gap:
+            12px;
     }
 
 
     .logo {
-        text-align: center;
 
-        font-size: 20px;
+        font-size:
+            20px;
     }
 
 
     .main-menu {
-        width: 100%;
 
-        justify-content: center;
+        width:
+            100%;
 
-        flex-wrap: wrap;
+        justify-content:
+            center;
 
         gap:
-            14px
-            24px;
+            12px
+            22px;
     }
 
 
-    .main-menu a {
-        font-size: 14px;
+    .main-menu button {
+
+        font-size:
+            14px;
     }
 
 
@@ -790,7 +1090,7 @@ a {
         padding:
             90px
             18px
-            130px;
+            140px;
     }
 
 
@@ -802,53 +1102,78 @@ a {
                 17vw,
                 82px
             );
-
     }
 
 
     .hero-buttons {
 
         width:
-            min(
-                88%,
-                420px
-            );
+            88%;
 
-        bottom: 9%;
+        bottom:
+            10%;
 
-        gap: 14px;
+        gap:
+            15px;
     }
 
 
     .main-button {
 
         padding:
-            14px
+            16px
             10px;
 
-        font-size: 15px;
+        font-size:
+            15px;
+
+        border-radius:
+            10px;
     }
 
 
     .moving-shape {
 
         filter:
-            blur(55px);
+            blur(42px);
     }
 
 
-    .popup-section {
+    .fullscreen-overlay {
 
         padding:
-            55px
             18px;
     }
 
 
-    .image-placeholder,
-    .video-placeholder {
+    .donation-image-container {
 
-        font-size: 13px;
+        width:
+            100%;
+
+        max-height:
+            75vh;
+    }
+
+
+    .donation-image {
+
+        max-height:
+            75vh;
+    }
+
+
+    .video-container {
+
+        width:
+            100%;
+    }
+
+
+    .jumpscare-video {
+
+        max-height:
+            75vh;
     }
 
 
@@ -864,7 +1189,7 @@ a {
 
 
 /* =========================================
-   애니메이션 감소 설정
+   모션 감소 설정
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -873,35 +1198,11 @@ a {
     *::before,
     *::after {
 
-        animation-duration:
-            0.01ms !important;
+        animation:
+            none !important;
 
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            0.01ms !important;
-    }
-
-}
-
-/* =========================================
-   페이지 나가기 Fade
-========================================= */
-
-body.fade-out {
-    animation: fadeOut 0.4s ease forwards;
-}
-
-
-@keyframes fadeOut {
-
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
+        transition:
+            none !important;
     }
 
 }
