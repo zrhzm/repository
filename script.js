@@ -173,35 +173,35 @@ document.addEventListener("DOMContentLoaded", () => {
        ㅗ 표시
     ===================================== */
 
-    const menuButtons =
-        document.querySelectorAll(
-            ".menu-button"
-        );
+const menuButtons =
+    document.querySelectorAll(".menu-button");
 
-    const menuMessage =
-        document.getElementById(
-            "menuMessage"
-        );
+menuButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const message = document.createElement("div");
+
+        message.className = "menu-message";
+
+        message.textContent = "ㅗ";
+
+        document.body.appendChild(message);
+
+        document.body.style.overflow = "hidden";
 
 
-    menuButtons.forEach(
-        (button) => {
+        message.addEventListener("click", () => {
 
-            button.addEventListener(
-                "click",
-                () => {
+            message.remove();
 
-                    menuMessage.hidden =
-                        false;
+            document.body.style.overflow = "";
 
-                    document.body.style.overflow =
-                        "hidden";
+        });
 
-                }
-            );
+    });
 
-        }
-    );
+});
 
 
     /* =====================================
