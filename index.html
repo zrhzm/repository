@@ -2,7 +2,6 @@
 <html lang="ko">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -16,231 +15,242 @@
         rel="stylesheet"
         href="style.css"
     >
-
 </head>
 
 <body>
 
-<header class="site-header">
+    <!-- ========================================
+         HEADER
+    ========================================= -->
 
-    <!-- HOME -->
+    <header class="site-header">
 
-    <a
-        href="index.html"
-        class="logo"
-    >
-        home
-    </a>
-
-
-    <!-- 상단 메뉴 -->
-
-    <nav class="main-menu">
-
-        <button class="menu-button">
-            상품
-        </button>
-
-        <button class="menu-button">
-            장바구니
-        </button>
-
-        <button class="menu-button">
-            결제수단
-        </button>
-
-        <button class="menu-button">
-            설정
-        </button>
-
-    </nav>
-
-</header>
+        <!-- HOME -->
+        <a
+            href="index.html"
+            class="logo"
+        >
+            home
+        </a>
 
 
-<main>
-
-    <!-- =====================================
-         메인 배경
-    ====================================== -->
-
-    <section class="hero">
-
-
-        <!-- 움직이는 배경 -->
-
-        <div class="moving-shape shape-1"></div>
-
-        <div class="moving-shape shape-2"></div>
-
-        <div class="moving-shape shape-3"></div>
-
-        <div class="moving-shape shape-4"></div>
-
-
-        <!-- =================================
-             환영 문구
-        ================================== -->
-
-        <div class="welcome">
-
-            <p class="small-label">
-                WELCOME
-            </p>
-
-            <h1>
-                HAAAI ^_^
-            </h1>
-
-        </div>
-
-
-        <!-- =================================
-             버튼
-        ================================== -->
-
-        <div class="hero-buttons">
+        <!-- 상단 메뉴 -->
+        <nav class="main-menu">
 
             <button
                 type="button"
-                class="main-button"
-                id="donationButton"
+                class="menu-button"
             >
-                기부
+                상품
             </button>
-
 
             <button
                 type="button"
-                class="main-button"
-                id="jumpscareButton"
+                class="menu-button"
             >
-                점프스케어
+                장바구니
             </button>
 
-        </div>
+            <button
+                type="button"
+                class="menu-button"
+            >
+                결제수단
+            </button>
 
-    </section>
+            <button
+                type="button"
+                class="menu-button"
+            >
+                설정
+            </button>
+
+        </nav>
+
+    </header>
 
 
-    <!-- =====================================
-         기부 전체화면
-    ====================================== -->
+    <!-- ========================================
+         MAIN
+    ========================================= -->
 
-    <section
-        class="fullscreen-overlay"
-        id="donationSection"
-        hidden
-    >
+    <main>
 
-        <div class="overlay-content">
+        <section class="hero">
 
-            <div class="donation-image-container">
+            <!-- ==================================
+                 움직이는 배경
+            =================================== -->
 
-                <img
-                    src="assets/images/plz.jpg"
-                    alt="기부 이미지"
-                    class="donation-image"
+            <div class="moving-shape shape-1"></div>
+
+            <div class="moving-shape shape-2"></div>
+
+            <div class="moving-shape shape-3"></div>
+
+            <div class="moving-shape shape-4"></div>
+
+
+            <!-- ==================================
+                 환영 문구
+            =================================== -->
+
+            <div class="welcome">
+
+                <p class="small-label">
+                    WELCOME
+                </p>
+
+                <h1>
+                    HAAAI ^_^
+                </h1>
+
+            </div>
+
+
+            <!-- ==================================
+                 메인 버튼
+            =================================== -->
+
+            <div class="hero-buttons">
+
+                <button
+                    type="button"
+                    class="main-button"
+                    id="donationButton"
                 >
+                    기부
+                </button>
 
 
-                <!-- =================================
-                     DONATION TEXT HERE
+                <button
+                    type="button"
+                    class="main-button"
+                    id="jumpscareButton"
+                >
+                    점프스케어
+                </button>
 
-                     사진 위에 넣을 글씨를
-                     이 부분에 입력하세요.
-                ================================== -->
+            </div>
 
-                <div class="donation-overlay">
+        </section>
 
-                    DONATION TEXT HERE
+
+        <!-- ========================================
+             기부 전체 화면
+        ========================================= -->
+
+        <section
+            class="fullscreen-overlay"
+            id="donationSection"
+            hidden
+        >
+
+            <div class="overlay-content">
+
+                <div class="donation-image-container">
+
+                    <!-- 실제 기부 이미지 -->
+
+                    <img
+                        src="assets/images/plz.jpg"
+                        alt="기부 이미지"
+                        class="donation-image"
+                    >
+
+
+                    <!-- ==================================
+                         DONATION TEXT HERE
+
+                         사진 위에 들어갈 글씨
+                    =================================== -->
+
+                    <div class="donation-overlay">
+                        DONATION TEXT HERE
+                    </div>
 
                 </div>
 
+
+                <button
+                    type="button"
+                    class="close-button"
+                >
+                    닫기
+                </button>
+
             </div>
 
-
-            <button
-                type="button"
-                class="close-button"
-            >
-                닫기
-            </button>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- =====================================
-         점프스케어 전체화면
-    ====================================== -->
+        <!-- ========================================
+             점프스케어 전체 화면
+        ========================================= -->
 
-    <section
-        class="fullscreen-overlay"
-        id="jumpscareSection"
-        hidden
-    >
+        <section
+            class="fullscreen-overlay"
+            id="jumpscareSection"
+            hidden
+        >
 
-        <div class="overlay-content">
+            <div class="overlay-content">
 
-            <div class="video-container">
+                <div class="video-container">
 
-                <video
-                    class="jumpscare-video"
-                    controls
-                    playsinline
-                >
+                    <!-- 실제 점프스케어 영상 -->
 
-                    <source
-                        src="assets/videos/ohoh.mp4"
-                        type="video/mp4"
+                    <video
+                        class="jumpscare-video"
+                        controls
+                        playsinline
                     >
 
-                    브라우저에서 영상을 재생할 수 없습니다.
+                        <source
+                            src="assets/videos/ohoh.mp4"
+                            type="video/mp4"
+                        >
 
-                </video>
+                        브라우저에서 영상을 재생할 수 없습니다.
+
+                    </video>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-button"
+                >
+                    닫기
+                </button>
 
             </div>
 
+        </section>
 
-            <button
-                type="button"
-                class="close-button"
-            >
-                닫기
-            </button>
-
-        </div>
-
-    </section>
-
-</main>
+    </main>
 
 
-<!-- =====================================
-     홈에서만 표시되는 문구
-====================================== -->
+    <!-- ========================================
+         홈 하단 문구
+    ========================================= -->
 
-<footer class="site-footer">
+    <footer class="site-footer">
 
-    <p>
-        ssunkensh1pp@gmail.com
-    </p>
+        <p>
+            ssunkensh1pp@gmail.com
+        </p>
 
-    <p>
-        무례하시고 rude하시군요.
-    </p>
+        <p>
+            무례하시고 rude하시군요.
+        </p>
 
-</footer>
-
-
-<!-- =====================================
-     메뉴 클릭 시 표시되는 ㅗ
-====================================== -->
+    </footer>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
