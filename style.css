@@ -823,9 +823,15 @@ button {
 
     position: fixed;
 
-    z-index: 200;
+    z-index: 40;
 
-    inset: 0;
+    top: 78px;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
 
     display: flex;
 
@@ -854,7 +860,6 @@ button {
     cursor:
         pointer;
 }
-
 
 /* =========================================
    Fade
