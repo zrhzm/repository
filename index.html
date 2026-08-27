@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HAAAI ^_^</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="site">
+
+    <!-- =========================================
+         TOP NAVIGATION
+         ========================================= -->
+    <header class="top-bar">
+
+      <nav class="top-nav">
+
+        <!-- HOME -->
+        <button
+          class="nav-button active"
+          data-page="home"
+          type="button"
+        >
+          Home
+        </button>
+
+        <!-- MENU -->
+        <button
+          class="nav-button"
+          data-page="dummy"
+          type="button"
+        >
+          상품
+        </button>
+
+        <button
+          class="nav-button"
+          data-page="dummy"
+          type="button"
+        >
+          장바구니
+        </button>
+
+        <button
+          class="nav-button"
+          data-page="dummy"
+          type="button"
+        >
+          결제수단
+        </button>
+
+        <button
+          class="nav-button"
+          data-page="dummy"
+          type="button"
+        >
+          설정
+        </button>
+
+      </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE CONTAINER
+         ========================================= -->
+    <main class="page-container">
+
+
+      <!-- =========================================
+           HOME PAGE
+           ========================================= -->
+      <section
+        id="home-page"
+        class="page home-page active-page"
+      >
+
+        <!-- BACKGROUND VIDEO -->
+        <video
+          class="background-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+
+        <!-- 영상 위 밝은 오버레이 -->
+        <div class="background-overlay"></div>
+
+
+        <!-- HOME CONTENT -->
+        <div class="home-content">
+
+          <h1 class="home-title">
+            HAAAI ^_^
+          </h1>
+
+
+          <!-- =====================================
+               CENTRAL BUTTONS
+               ===================================== -->
+          <div class="main-buttons">
+
+            <button
+              id="donation-button"
+              class="main-button"
+              type="button"
+            >
+              <span>기부</span>
+            </button>
+
+            <button
+              id="jumpscare-button"
+              class="main-button"
+              type="button"
+            >
+              <span>점프스케어</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             HOME ONLY FOOTER TEXT
+             ===================================== -->
+        <div class="home-footer">
+
+          <p>
+            ssunkensh1pp@gmail.com
+          </p>
+
+          <p>
+            무례하시고 rude하시군요.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           DUMMY MENU PAGE
+           ========================================= -->
+      <section
+        id="dummy-page"
+        class="page dummy-page"
+      >
+
+        <div class="simple-page-content">
+
+          <div class="dummy-symbol">
+            ㅗ
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           DONATION PAGE
+           ========================================= -->
+      <section
+        id="donation-page"
+        class="page content-page"
+      >
+
+        <!-- DONATION IMAGE HERE -->
+
+        <div class="donation-image-wrapper">
+
+          <img
+            src="assets/images/plz.jpg"
+            alt="기부 이미지"
+            class="donation-image"
+          >
+
+          <!-- DONATION TEXT HERE -->
+
+          <div class="donation-text">
+            돈줘
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================================
+           JUMPSCARE PAGE
+           ========================================= -->
+      <section
+        id="jumpscare-page"
+        class="page content-page"
+      >
+
+        <!-- JUMPSCARE VIDEO HERE -->
+
+        <div class="jumpscare-wrapper">
+
+          <video
+            id="jumpscare-video"
+            class="jumpscare-video"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="assets/videos/ohoh.mp4"
+              type="video/mp4"
+            >
+
+            이 브라우저에서는 동영상을 재생할 수 없습니다.
+
+          </video>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
