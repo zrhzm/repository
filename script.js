@@ -202,3 +202,32 @@ menuButtons.forEach((button) => {
     });
 
 });
+
+ menuButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const message = document.createElement("div");
+
+        message.className = "menu-message";
+
+        message.textContent = "ㅗ";
+
+        document.body.appendChild(message);
+
+        document.body.style.overflow = "hidden";
+
+
+        message.addEventListener("click", () => {
+
+            message.remove();
+
+            document.body.style.overflow = "";
+
+        });
+
+    });
+
+});
+
+});
