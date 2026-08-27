@@ -1,220 +1,254 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HAAAI ^_^</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>home</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<header class="site-header">
 
-    <header class="site-header">
+    <!-- HOME -->
 
-        <a href="index.html" class="logo">
-            HAAAI ^_^
-        </a>
-
-        <nav class="main-menu">
-
-            <a href="products.html">
-                상품
-            </a>
-
-            <a href="cart.html">
-                장바구니
-            </a>
-
-            <a href="payment.html">
-                결제수단
-            </a>
-
-            <a href="settings.html">
-                설정
-            </a>
-
-        </nav>
-
-    </header>
+    <a
+        href="index.html"
+        class="logo"
+    >
+        home
+    </a>
 
 
-    <!-- =========================
-         MAIN HERO
-    ========================== -->
+    <!-- 상단 메뉴 -->
 
-    <main>
+    <nav class="main-menu">
 
-        <section class="hero">
+        <button class="menu-button">
+            상품
+        </button>
 
-            <!-- 움직이는 배경 -->
+        <button class="menu-button">
+            장바구니
+        </button>
 
-            <div class="moving-shape shape-1"></div>
-            <div class="moving-shape shape-2"></div>
-            <div class="moving-shape shape-3"></div>
-            <div class="moving-shape shape-4"></div>
+        <button class="menu-button">
+            결제수단
+        </button>
+
+        <button class="menu-button">
+            설정
+        </button>
+
+    </nav>
+
+</header>
 
 
-            <!-- 환영 문구 -->
+<main>
 
-            <div class="welcome">
+    <!-- =====================================
+         메인 배경
+    ====================================== -->
 
-                <p class="small-label">
-                    WELCOME
-                </p>
+    <section class="hero">
 
-                <h1>
-                    HAAAI ^_^
-                </h1>
+
+        <!-- 움직이는 배경 -->
+
+        <div class="moving-shape shape-1"></div>
+
+        <div class="moving-shape shape-2"></div>
+
+        <div class="moving-shape shape-3"></div>
+
+        <div class="moving-shape shape-4"></div>
+
+
+        <!-- =================================
+             환영 문구
+        ================================== -->
+
+        <div class="welcome">
+
+            <p class="small-label">
+                WELCOME
+            </p>
+
+            <h1>
+                HAAAI ^_^
+            </h1>
+
+        </div>
+
+
+        <!-- =================================
+             버튼
+        ================================== -->
+
+        <div class="hero-buttons">
+
+            <button
+                type="button"
+                class="main-button"
+                id="donationButton"
+            >
+                기부
+            </button>
+
+
+            <button
+                type="button"
+                class="main-button"
+                id="jumpscareButton"
+            >
+                점프스케어
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         기부 전체화면
+    ====================================== -->
+
+    <section
+        class="fullscreen-overlay"
+        id="donationSection"
+        hidden
+    >
+
+        <div class="overlay-content">
+
+            <div class="donation-image-container">
+
+                <img
+                    src="assets/images/plz.jpg"
+                    alt="기부 이미지"
+                    class="donation-image"
+                >
+
+
+                <!-- =================================
+                     DONATION TEXT HERE
+
+                     사진 위에 넣을 글씨를
+                     이 부분에 입력하세요.
+                ================================== -->
+
+                <div class="donation-overlay">
+
+                    DONATION TEXT HERE
+
+                </div>
 
             </div>
 
 
-            <!-- 버튼 -->
+            <button
+                type="button"
+                class="close-button"
+            >
+                닫기
+            </button>
 
-            <div class="hero-buttons">
+        </div>
 
-                <button
-                    type="button"
-                    class="main-button"
-                    id="donationButton"
+    </section>
+
+
+    <!-- =====================================
+         점프스케어 전체화면
+    ====================================== -->
+
+    <section
+        class="fullscreen-overlay"
+        id="jumpscareSection"
+        hidden
+    >
+
+        <div class="overlay-content">
+
+            <div class="video-container">
+
+                <video
+                    class="jumpscare-video"
+                    controls
+                    playsinline
                 >
-                    기부
-                </button>
 
-                <button
-                    type="button"
-                    class="main-button"
-                    id="jumpscareButton"
-                >
-                    점프스케어
-                </button>
+                    <source
+                        src="assets/videos/ohoh.mp4"
+                        type="video/mp4"
+                    >
+
+                    브라우저에서 영상을 재생할 수 없습니다.
+
+                </video>
 
             </div>
 
-        </section>
+
+            <button
+                type="button"
+                class="close-button"
+            >
+                닫기
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
 
 
-        <!-- =========================
-             DONATION AREA
-        ========================== -->
+<!-- =====================================
+     홈에서만 표시되는 문구
+====================================== -->
 
-        <section
-            class="popup-section"
-            id="donationSection"
-            hidden
-        >
+<footer class="site-footer">
 
-            <div class="popup-content">
+    <p>
+        ssunkensh1pp@gmail.com
+    </p>
 
-                <p class="section-label">
-                    DONATION
-                </p>
+    <p>
+        무례하시고 rude하시군요.
+    </p>
+
+</footer>
 
 
-                <div class="donation-image-container">
+<!-- =====================================
+     메뉴 클릭 시 표시되는 ㅗ
+====================================== -->
 
-                    <!-- ==================================
-                    
-                         <img
-    src="assets/images/plz.jpg"
-    alt="기부 이미지"
+<div
+    class="menu-message"
+    id="menuMessage"
+    hidden
 >
+    ㅗ
+</div>
 
 
-                    <!-- ==================================
-                    돈주세요 plz
-                    =================================== -->
-
-                    <div class="donation-overlay">
-                        DONATION TEXT HERE
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="close-button"
-                >
-                    닫기
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             JUMPSCARE AREA
-        ========================== -->
-
-        <section
-            class="popup-section"
-            id="jumpscareSection"
-            hidden
-        >
-
-            <div class="popup-content">
-
-                <p class="section-label">
-                    JUMPSCARE
-                </p>
-
-
-                <div class="video-container">
-
-                    <!-- ==================================
-                        <video controls>
-    <source src="assets/videos/ohoh.mp4" type="video/mp4">
-</video>
-
-                    =================================== -->
-
-                    <div class="video-placeholder">
-                        JUMPSCARE VIDEO HERE
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="close-button"
-                >
-                    닫기
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="site-footer">
-
-        <p>
-            ssunkensh1pp@gmail.com
-        </p>
-
-        <p>
-            무례하시고 rude하시군요.
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
