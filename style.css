@@ -222,167 +222,91 @@ button {
    움직이는 배경
 ========================================= */
 
+/* =========================================
+   영상 느낌의 유기적인 배경
+========================================= */
+
 .moving-shape {
 
     position: absolute;
 
     z-index: -1;
 
+    pointer-events: none;
+
+    width: 65vw;
+
+    height: 65vw;
+
+    max-width: 850px;
+
+    max-height: 850px;
+
     border-radius:
-        50%;
+        58%
+        42%
+        53%
+        47%
+        /
+        48%
+        57%
+        43%
+        52%;
 
     background:
-        #8f8f8f;
-
-    opacity:
-        0.62;
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #eeeeee 42%,
+            #bdbdbd 100%
+        );
 
     filter:
-        blur(55px);
+        blur(18px);
+
+    opacity:
+        0.82;
 
     will-change:
         transform;
 
-    pointer-events:
-        none;
+    box-shadow:
+        inset
+        -40px
+        -50px
+        90px
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        ),
+
+        inset
+        45px
+        40px
+        100px
+        rgba(
+            70,
+            70,
+            70,
+            0.15
+        );
 }
 
 
-/* 큰 형태 1 */
+/* 왼쪽 위 곡면 */
 
 .shape-1 {
 
-    width:
-        52vw;
-
-    height:
-        52vw;
-
-    max-width:
-        700px;
-
-    max-height:
-        700px;
-
     top:
-        -25%;
+        -32%;
 
     left:
-        -15%;
+        -20%;
 
     animation:
-        moveShape1
-        18s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-/* 큰 형태 2 */
-
-.shape-2 {
-
-    width:
-        48vw;
-
-    height:
-        48vw;
-
-    max-width:
-        650px;
-
-    max-height:
-        650px;
-
-    top:
-        -5%;
-
-    right:
-        -15%;
-
-    background:
-        #777777;
-
-    opacity:
-        0.58;
-
-    animation:
-        moveShape2
-        21s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-/* 형태 3 */
-
-.shape-3 {
-
-    width:
-        55vw;
-
-    height:
-        45vw;
-
-    max-width:
-        750px;
-
-    max-height:
-        600px;
-
-    bottom:
-        -30%;
-
-    left:
-        15%;
-
-    background:
-        #999999;
-
-    opacity:
-        0.55;
-
-    animation:
-        moveShape3
-        24s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-/* 형태 4 */
-
-.shape-4 {
-
-    width:
-        40vw;
-
-    height:
-        40vw;
-
-    max-width:
-        550px;
-
-    max-height:
-        550px;
-
-    right:
-        15%;
-
-    bottom:
-        -10%;
-
-    background:
-        #707070;
-
-    opacity:
-        0.48;
-
-    animation:
-        moveShape4
+        organicMove1
         20s
         ease-in-out
         infinite
@@ -390,974 +314,109 @@ button {
 }
 
 
-/* =========================================
-   환영 문구
-========================================= */
+/* 오른쪽 위 곡면 */
 
-.welcome {
-
-    position: relative;
-
-    z-index: 5;
-
-    text-align: center;
-}
-
-
-.small-label {
-
-    margin:
-        0
-        0
-        20px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing:
-        0.2em;
-}
-
-
-.welcome h1 {
-
-    margin: 0;
-
-    font-size:
-        clamp(
-            60px,
-            10vw,
-            120px
-        );
-
-    font-weight:
-        500;
-
-    line-height:
-        0.95;
-
-    letter-spacing:
-        -0.05em;
-}
-
-
-/* =========================================
-   메인 버튼
-========================================= */
-
-.hero-buttons {
-
-    position: absolute;
-
-    z-index: 5;
-
-    left: 50%;
-
-    bottom: 13%;
-
-    transform:
-        translateX(-50%);
+.shape-2 {
 
     width:
-        min(
-            90%,
-            560px
-        );
+        72vw;
 
-    display: grid;
+    height:
+        52vw;
 
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
+    top:
+        -8%;
 
-    gap: 24px;
-}
-
-
-.main-button {
-
-    border:
-        1px solid #111111;
-
-    border-radius:
-        12px;
-
-    padding:
-        17px
-        25px;
+    right:
+        -28%;
 
     background:
-        #111111;
-
-    color:
-        #ffffff;
-
-    font-size:
-        17px;
-
-    cursor:
-        pointer;
-
-    box-shadow:
-        0 8px 0 #666666;
-
-    transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        background 0.18s ease;
-}
-
-
-.main-button:hover {
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 4px 0 #666666;
-
-    background:
-        #2b2b2b;
-}
-
-
-.main-button:active {
-
-    transform:
-        translateY(2px);
-
-    box-shadow:
-        0 2px 0 #666666;
-}
-
-
-/* =========================================
-   전체화면 Overlay
-========================================= */
-
-.fullscreen-overlay {
-
-    position: fixed;
-
-    z-index: 100;
-
-    inset: 0;
-
-    width: 100vw;
-
-    height: 100vh;
-
-    height: 100svh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding:
-        30px;
-
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            0.94
+        linear-gradient(
+            120deg,
+            #fefefe 0%,
+            #dcdcdc 48%,
+            #9c9c9c 100%
         );
+
+    opacity:
+        0.72;
 
     animation:
-        overlayIn
-        0.25s
-        ease;
+        organicMove2
+        25s
+        ease-in-out
+        infinite
+        alternate;
 }
 
 
-/* Overlay 내부 */
+/* 가운데 아래 곡면 */
 
-.overlay-content {
+.shape-3 {
 
     width:
-        min(
-            100%,
-            1000px
-        );
+        78vw;
 
-    max-height:
-        95vh;
+    height:
+        48vw;
 
-    max-height:
-        95svh;
+    bottom:
+        -30%;
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 25px;
-}
-
-
-/* =========================================
-   기부 사진
-========================================= */
-
-.donation-image-container {
-
-    position: relative;
-
-    width:
-        min(
-            100%,
-            850px
-        );
-
-    max-height:
-        80vh;
-
-    overflow: hidden;
-
-    text-align: center;
-}
-
-
-.donation-image {
-
-    display: block;
-
-    width: 100%;
-
-    max-height:
-        80vh;
-
-    object-fit:
-        contain;
-}
-
-
-/* 사진 위 글씨 */
-
-.donation-overlay {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(
-            -50%,
-            -50%
-        );
-
-    width: 90%;
-
-    color: #ffffff;
-
-    font-size:
-        clamp(
-            18px,
-            3vw,
-            34px
-        );
-
-    text-align:
-        center;
-
-    text-shadow:
-        0 2px 10px
-        rgba(
-            0,
-            0,
-            0,
-            0.8
-        );
-}
-
-
-/* =========================================
-   영상
-========================================= */
-
-.video-container {
-
-    width:
-        min(
-            100%,
-            950px
-        );
-
-    max-height:
-        80vh;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-}
-
-
-.jumpscare-video {
-
-    display:
-        block;
-
-    width:
-        100%;
-
-    max-height:
-        80vh;
-
-    object-fit:
-        contain;
+    left:
+        6%;
 
     background:
-        #000000;
-}
-
-
-/* =========================================
-   닫기 버튼
-========================================= */
-
-.close-button {
-
-    border:
-        1px solid #ffffff;
-
-    border-radius:
-        10px;
-
-    padding:
-        12px
-        28px;
-
-    background:
-        #ffffff;
-
-    color:
-        #111111;
-
-    font-size:
-        15px;
-
-    cursor:
-        pointer;
-
-    box-shadow:
-        0 6px 0 #666666;
-
-    transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
-}
-
-
-.close-button:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 3px 0 #666666;
-}
-
-
-.close-button:active {
-
-    transform:
-        translateY(1px);
-
-    box-shadow:
-        0 2px 0 #666666;
-}
-
-
-/* =========================================
-   홈 하단 문구
-========================================= */
-
-.site-footer {
-
-    width: 100%;
-
-    padding:
-        25px
-        6vw
-        30px;
-
-    background:
-        #ffffff;
-
-    color:
-        #111111;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-}
-
-
-.site-footer p {
-
-    margin:
-        0;
-}
-
-
-/* =========================================
-   메뉴 클릭 ㅗ
-========================================= */
-
-.menu-message {
-
-    position: fixed;
-
-    z-index: 40;
-
-    top: 78px;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        #ffffff;
-
-    color:
-        #111111;
-
-    font-size:
-        clamp(
-            80px,
-            20vw,
-            200px
+        linear-gradient(
+            160deg,
+            #ffffff 0%,
+            #e2e2e2 48%,
+            #aaaaaa 100%
         );
+
+    opacity:
+        0.78;
 
     animation:
-        messageIn
-        0.2s
-        ease;
-
-    cursor:
-        pointer;
-}
-
-/* =========================================
-   Fade
-========================================= */
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
+        organicMove3
+        27s
+        ease-in-out
+        infinite
+        alternate;
 }
 
 
-@keyframes overlayIn {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
-}
-
-
-@keyframes messageIn {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
-}
-
-
-/* =========================================
-   배경 움직임
-========================================= */
-
-@keyframes moveShape1 {
-
-    0% {
-
-        transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            rotate(0deg)
-            scale(1);
-
-    }
-
-    100% {
-
-        transform:
-            translate3d(
-                18%,
-                15%,
-                0
-            )
-            rotate(25deg)
-            scale(1.15);
-
-    }
-
-}
-
-
-@keyframes moveShape2 {
-
-    0% {
-
-        transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            rotate(0deg)
-            scale(1);
-
-    }
-
-    100% {
-
-        transform:
-            translate3d(
-                -20%,
-                18%,
-                0
-            )
-            rotate(-20deg)
-            scale(1.12);
-
-    }
-
-}
-
-
-@keyframes moveShape3 {
-
-    0% {
-
-        transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            rotate(0deg)
-            scale(1);
-
-    }
-
-    100% {
-
-        transform:
-            translate3d(
-                -15%,
-                -18%,
-                0
-            )
-            rotate(25deg)
-            scale(1.12);
-
-    }
-
-}
-
-
-@keyframes moveShape4 {
-
-    0% {
-
-        transform:
-            translate3d(
-                0,
-                0,
-                0
-            )
-            rotate(0deg)
-            scale(1);
-
-    }
-
-    100% {
-
-        transform:
-            translate3d(
-                18%,
-                -15%,
-                0
-            )
-            rotate(-25deg)
-            scale(1.14);
-
-    }
-
-}
-
-
-/* =========================================
-   모바일
-========================================= */
-
-@media (max-width: 720px) {
-
-    .site-header {
-
-        min-height: auto;
-
-        padding:
-            17px
-            16px
-            18px;
-
-        flex-direction: row;
-
-        align-items: flex-start;
-
-        justify-content: space-between;
-
-        gap: 12px;
-    }
-
-
-    .logo {
-
-        flex-shrink: 0;
-
-        font-size: 18px;
-
-        text-align: left;
-
-        padding-top: 4px;
-    }
-
-
-    .main-menu {
-
-        flex: 1;
-
-        width: auto;
-
-        justify-content: flex-end;
-
-        flex-wrap: wrap;
-
-        gap:
-            8px
-            16px;
-    }
-
-
-    .main-menu button {
-
-        font-size: 13px;
-
-        padding:
-            6px
-            0;
-    }
-
-
-    .hero {
-
-        min-height:
-            calc(
-                100svh - 72px
-            );
-
-        padding:
-            90px
-            18px
-            140px;
-    }
-
-
-    .welcome h1 {
-
-        font-size:
-            clamp(
-                50px,
-                17vw,
-                82px
-            );
-    }
-
-
-    .hero-buttons {
-
-        width:
-            88%;
-
-        bottom:
-            10%;
-
-        gap:
-            15px;
-    }
-
-
-    .main-button {
-
-        padding:
-            16px
-            10px;
-
-        font-size:
-            15px;
-
-        border-radius:
-            10px;
-    }
-
-
-    .moving-shape {
-
-        filter:
-            blur(45px);
-    }
-
-
-    .fullscreen-overlay {
-
-        padding:
-            18px;
-    }
-
-
-    .donation-image-container {
-
-        width:
-            100%;
-
-        max-height:
-            75vh;
-    }
-
-
-    .donation-image {
-
-        max-height:
-            75vh;
-    }
-
-
-    .video-container {
-
-        width:
-            100%;
-    }
-
-
-    .jumpscare-video {
-
-        max-height:
-            75vh;
-    }
-
-
-    .site-footer {
-
-        padding:
-            22px
-            20px
-            26px;
-    }
-
-}
-
-
-    .logo {
-
-        font-size:
-            20px;
-    }
-
-
-    .main-menu {
-
-        width:
-            100%;
-
-        justify-content:
-            center;
-
-        gap:
-            12px
-            22px;
-    }
-
-
-    .main-menu button {
-
-        font-size:
-            14px;
-    }
-
-
-    .hero {
-
-        min-height:
-            calc(
-                100svh - 115px
-            );
-
-        padding:
-            90px
-            18px
-            140px;
-    }
-
-
-    .welcome h1 {
-
-        font-size:
-            clamp(
-                50px,
-                17vw,
-                82px
-            );
-    }
-
-
-    .hero-buttons {
-
-        width:
-            88%;
-
-        bottom:
-            10%;
-
-        gap:
-            15px;
-    }
-
-
-    .main-button {
-
-        padding:
-            16px
-            10px;
-
-        font-size:
-            15px;
-
-        border-radius:
-            10px;
-    }
-
-
-    .moving-shape {
-
-        filter:
-            blur(42px);
-    }
-
-
-    .fullscreen-overlay {
-
-        padding:
-            18px;
-    }
-
-
-    .donation-image-container {
-
-        width:
-            100%;
-
-        max-height:
-            75vh;
-    }
-
-
-    .donation-image {
-
-        max-height:
-            75vh;
-    }
-
-
-    .video-container {
-
-        width:
-            100%;
-    }
-
-
-    .jumpscare-video {
-
-        max-height:
-            75vh;
-    }
-
-
-    .site-footer {
-
-        padding:
-            22px
-            20px
-            26px;
-    }
-
-}
-
-
-/* =========================================
-   모션 감소 설정
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation:
-            none !important;
-
-        transition:
-            none !important;
-    }
-
-}
-
-[hidden] {
-    display: none !important;
+/* 오른쪽 아래 */
+
+.shape-4 {
+
+    width:
+        50vw;
+
+    height:
+        60vw;
+
+    bottom:
+        -24%;
+
+    right:
+        -10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fefefe 0%,
+            #d0d0d0 50%,
+            #8d8d8d 100%
+        );
+
+    opacity:
+        0.62;
+
+    animation:
+        organicMove4
+        22s
+        ease-in-out
+        infinite
+        alternate;
 }
