@@ -1,0 +1,984 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f5f5;
+  color: #111;
+
+  overflow-x: hidden;
+
+  animation: pageFadeIn 0.4s ease;
+}
+
+
+/* =========================================
+   PAGE FADE
+   ========================================= */
+
+@keyframes pageFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SITE
+   ========================================= */
+
+.site {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.top-bar {
+
+  position: relative;
+
+  z-index: 100;
+
+  width: 100%;
+
+  padding:
+    25px
+    clamp(18px, 5vw, 70px)
+    14px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border-bottom:
+    1px solid rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================
+   NAV
+   ========================================= */
+
+.top-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap:
+    16px
+    clamp(18px, 3.8vw, 48px);
+
+}
+
+
+/* =========================================
+   NAV BUTTON
+   ========================================= */
+
+.nav-button {
+
+  position: relative;
+
+  border: none;
+
+  background: none;
+
+  padding:
+    4px 0
+    9px;
+
+  color: #111;
+
+  font-size:
+    clamp(13px, 1.4vw, 16px);
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   NAV UNDERLINE
+   ========================================= */
+
+.nav-button::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 1px;
+
+  width: 100%;
+  height: 1px;
+
+  background: #111;
+
+  transform: scaleX(0);
+
+  transform-origin: left center;
+
+  transition:
+    transform 0.22s ease;
+
+}
+
+
+.nav-button:hover::after,
+.nav-button.active::after {
+
+  transform: scaleX(1);
+
+}
+
+
+/* =========================================
+   PAGE CONTAINER
+   ========================================= */
+
+.page-container {
+
+  position: relative;
+
+  width: 100%;
+
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.page {
+
+  width: 100%;
+  min-height: calc(100vh - 76px);
+
+}
+
+
+/* =========================================
+   HIDDEN PAGE
+   ========================================= */
+
+.page:not(.active-page) {
+
+  display: none;
+
+}
+
+
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home-page {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height:
+    calc(100vh - 76px);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+}
+
+
+/* =========================================
+   BACKGROUND VIDEO
+   ========================================= */
+
+.background-video {
+
+  position: absolute;
+
+  z-index: -3;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+
+/* =========================================
+   BACKGROUND OVERLAY
+   ========================================= */
+
+.background-overlay {
+
+  position: absolute;
+
+  z-index: -2;
+
+  inset: 0;
+
+  background:
+    rgba(255, 255, 255, 0.16);
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================
+   HOME CONTENT
+   ========================================= */
+
+.home-content {
+
+  width: min(
+    calc(100% - 32px),
+    900px
+  );
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.home-title {
+
+  margin: 0;
+
+  color: #111;
+
+  font-size:
+    clamp(
+      42px,
+      6vw,
+      76px
+    );
+
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+
+  text-align: center;
+
+  text-shadow:
+    0 1px 10px rgba(255, 255, 255, 0.65);
+
+}
+
+
+/* =========================================
+   MAIN BUTTONS
+   ========================================= */
+
+.main-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      14px,
+      4vw,
+      42px
+    );
+
+  margin-top:
+    clamp(
+      65px,
+      10vh,
+      105px
+    );
+
+}
+
+
+/* =========================================
+   MAIN BUTTON
+   ========================================= */
+
+.main-button {
+
+  position: relative;
+
+  min-width:
+    clamp(
+      145px,
+      18vw,
+      195px
+    );
+
+  padding:
+    16px 26px;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.2);
+
+  border-radius: 15px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #303030 0%,
+      #181818 55%,
+      #0d0d0d 100%
+    );
+
+  box-shadow:
+
+    0
+    8px
+    18px
+    rgba(0, 0, 0, 0.17),
+
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.22);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+
+    transform
+    0.17s
+    ease,
+
+    box-shadow
+    0.17s
+    ease,
+
+    filter
+    0.17s
+    ease;
+
+}
+
+
+/* =========================================
+   BUTTON SHINE
+   ========================================= */
+
+.main-button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+
+  left: -130%;
+
+  width: 80%;
+
+  height: 300%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+
+  transform:
+    rotate(20deg);
+
+  transition:
+    left
+    0.5s
+    ease;
+
+  pointer-events: none;
+
+}
+
+
+.main-button:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+
+    0
+    5px
+    12px
+    rgba(0, 0, 0, 0.15),
+
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.25);
+
+  filter:
+    brightness(1.05);
+
+}
+
+
+.main-button:hover::before {
+
+  left: 150%;
+
+}
+
+
+.main-button:active {
+
+  transform:
+    translateY(1px);
+
+  box-shadow:
+
+    0
+    2px
+    6px
+    rgba(0, 0, 0, 0.15),
+
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.15);
+
+}
+
+
+.main-button span {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
+/* =========================================
+   HOME FOOTER
+   ========================================= */
+
+.home-footer {
+
+  position: absolute;
+
+  left:
+    clamp(
+      12px,
+      2vw,
+      28px
+    );
+
+  bottom:
+    18px;
+
+  color: #111;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  z-index: 10;
+
+}
+
+
+.home-footer p {
+
+  margin: 0;
+
+}
+
+
+/* =========================================
+   DUMMY PAGE
+   ========================================= */
+
+.dummy-page {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height:
+    calc(100vh - 76px);
+
+  background: #f3f3f3;
+
+}
+
+
+.simple-page-content {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.dummy-symbol {
+
+  font-size:
+    clamp(
+      55px,
+      8vw,
+      100px
+    );
+
+  line-height: 1;
+
+}
+
+
+/* =========================================
+   DONATION / JUMPSCARE PAGE
+   ========================================= */
+
+.content-page {
+
+  min-height:
+    calc(100vh - 76px);
+
+  padding:
+    clamp(
+      25px,
+      5vw,
+      70px
+    )
+    clamp(
+      15px,
+      5vw,
+      70px
+    );
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    #f3f3f3;
+
+  animation:
+    contentFade 0.32s ease;
+
+}
+
+
+@keyframes contentFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================
+   DONATION IMAGE
+   ========================================= */
+
+.donation-image-wrapper {
+
+  position: relative;
+
+  width: min(
+    100%,
+    850px
+  );
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0
+    15px
+    45px
+    rgba(0, 0, 0, 0.12);
+
+}
+
+
+.donation-image {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  max-height:
+    78vh;
+
+  object-fit: contain;
+
+  background: #ddd;
+
+}
+
+
+/* =========================================
+   DONATION TEXT
+   ========================================= */
+
+.donation-text {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      46px,
+      7vw,
+      90px
+    );
+
+  font-weight: 700;
+
+  text-shadow:
+    0 3px 18px
+    rgba(0, 0, 0, 0.38);
+
+}
+
+
+/* =========================================
+   JUMPSCARE VIDEO
+   ========================================= */
+
+.jumpscare-wrapper {
+
+  width: min(
+    100%,
+    1000px
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.jumpscare-video {
+
+  display: block;
+
+  width: 100%;
+
+  max-height:
+    78vh;
+
+  height: auto;
+
+  background: #000;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0
+    15px
+    45px
+    rgba(0, 0, 0, 0.14);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 680px) {
+
+
+  /* NAV */
+
+  .top-bar {
+
+    padding:
+      17px
+      18px
+      10px;
+
+  }
+
+
+  .top-nav {
+
+    gap:
+      10px
+      20px;
+
+  }
+
+
+  .nav-button {
+
+    font-size: 13px;
+
+  }
+
+
+  /* HOME */
+
+  .home-page {
+
+    min-height:
+      calc(100vh - 68px);
+
+  }
+
+
+  .home-content {
+
+    width:
+      calc(100% - 28px);
+
+  }
+
+
+  .home-title {
+
+    font-size:
+      clamp(
+        40px,
+        12vw,
+        58px
+      );
+
+  }
+
+
+  /* BUTTONS */
+
+  .main-buttons {
+
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 14px;
+
+    margin-top: 65px;
+
+  }
+
+
+  .main-button {
+
+    width:
+      min(
+        100%,
+        270px
+      );
+
+  }
+
+
+  /* FOOTER */
+
+  .home-footer {
+
+    left: 12px;
+
+    bottom: 14px;
+
+    font-size: 11px;
+
+  }
+
+
+  /* CONTENT */
+
+  .content-page {
+
+    min-height:
+      calc(100vh - 68px);
+
+    padding:
+      20px
+      12px;
+
+  }
+
+
+  .donation-image-wrapper {
+
+    border-radius:
+      14px;
+
+  }
+
+
+  .jumpscare-video {
+
+    border-radius:
+      14px;
+
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 390px) {
+
+  .top-nav {
+
+    gap:
+      9px
+      16px;
+
+  }
+
+
+  .nav-button {
+
+    font-size: 12px;
+
+  }
+
+
+  .home-title {
+
+    font-size: 40px;
+
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  body {
+
+    animation: none;
+
+  }
+
+  .main-button,
+  .main-button::before,
+  .nav-button::after {
+
+    transition: none;
+
+  }
+
+  .content-page {
+
+    animation: none;
+
+  }
+
+}
