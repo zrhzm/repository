@@ -11,57 +11,36 @@
 
     <title>home</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ========================================
+    <!-- =========================================
          HEADER
-    ========================================= -->
+    ========================================== -->
 
     <header class="site-header">
 
-        <!-- HOME -->
-        <a
-            href="index.html"
-            class="logo"
-        >
+        <a href="index.html" class="logo">
             home
         </a>
 
-
-        <!-- 상단 메뉴 -->
         <nav class="main-menu">
 
-            <button
-                type="button"
-                class="menu-button"
-            >
+            <button type="button" class="menu-button">
                 상품
             </button>
 
-            <button
-                type="button"
-                class="menu-button"
-            >
+            <button type="button" class="menu-button">
                 장바구니
             </button>
 
-            <button
-                type="button"
-                class="menu-button"
-            >
+            <button type="button" class="menu-button">
                 결제수단
             </button>
 
-            <button
-                type="button"
-                class="menu-button"
-            >
+            <button type="button" class="menu-button">
                 설정
             </button>
 
@@ -70,75 +49,67 @@
     </header>
 
 
-    <!-- ========================================
+    <!-- =========================================
          MAIN
-    ========================================= -->
+    ========================================== -->
 
     <main>
 
         <section class="hero">
 
-            <!-- ==================================
-                 움직이는 배경
-            =================================== -->
+            <!-- 움직이는 배경 -->
 
             <div class="moving-shape shape-1"></div>
-
             <div class="moving-shape shape-2"></div>
-
             <div class="moving-shape shape-3"></div>
-
             <div class="moving-shape shape-4"></div>
 
 
-            <!-- ==================================
-                 환영 문구
-            =================================== -->
+            <!-- 중앙 콘텐츠 -->
 
-            <div class="welcome">
+            <div class="hero-center">
 
-                <p class="small-label">
-                    WELCOME
-                </p>
+                <div class="welcome">
 
-                <h1>
-                    HAAAI ^_^
-                </h1>
+                    <p class="small-label">
+                        WELCOME
+                    </p>
 
-            </div>
+                    <h1>
+                        HAAAI ^_^
+                    </h1>
 
-
-            <!-- ==================================
-                 메인 버튼
-            =================================== -->
-
-            <div class="hero-buttons">
-
-                <button
-                    type="button"
-                    class="main-button"
-                    id="donationButton"
-                >
-                    기부
-                </button>
+                </div>
 
 
-                <button
-                    type="button"
-                    class="main-button"
-                    id="jumpscareButton"
-                >
-                    점프스케어
-                </button>
+                <div class="hero-buttons">
+
+                    <button
+                        type="button"
+                        class="main-button"
+                        id="donationButton"
+                    >
+                        기부
+                    </button>
+
+                    <button
+                        type="button"
+                        class="main-button"
+                        id="jumpscareButton"
+                    >
+                        점프스케어
+                    </button>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ========================================
-             기부 전체 화면
-        ========================================= -->
+        <!-- =========================================
+             기부 화면
+        ========================================== -->
 
         <section
             class="fullscreen-overlay"
@@ -150,27 +121,18 @@
 
                 <div class="donation-image-container">
 
-                    <!-- 실제 기부 이미지 -->
-
                     <img
                         src="assets/images/plz.jpg"
                         alt="기부 이미지"
                         class="donation-image"
                     >
 
-
-                    <!-- ==================================
-                         DONATION TEXT HERE
-
-                         사진 위에 들어갈 글씨
-                    =================================== -->
-
+                    <!-- DONATION TEXT HERE -->
                     <div class="donation-overlay">
                         DONATION TEXT HERE
                     </div>
 
                 </div>
-
 
                 <button
                     type="button"
@@ -184,9 +146,9 @@
         </section>
 
 
-        <!-- ========================================
-             점프스케어 전체 화면
-        ========================================= -->
+        <!-- =========================================
+             점프스케어 화면
+        ========================================== -->
 
         <section
             class="fullscreen-overlay"
@@ -198,7 +160,7 @@
 
                 <div class="video-container">
 
-                    <!-- 실제 점프스케어 영상 -->
+                    <!-- JUMPSCARE VIDEO HERE -->
 
                     <video
                         class="jumpscare-video"
@@ -217,7 +179,6 @@
 
                 </div>
 
-
                 <button
                     type="button"
                     class="close-button"
@@ -232,9 +193,9 @@
     </main>
 
 
-    <!-- ========================================
-         홈 하단 문구
-    ========================================= -->
+    <!-- =========================================
+         홈에서만 표시
+    ========================================== -->
 
     <footer class="site-footer">
 
