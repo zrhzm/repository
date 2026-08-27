@@ -760,32 +760,16 @@ body {
    JUMPSCARE VIDEO
    ========================================= */
 
-.jumpscare-wrapper {
-
-  width: min(
-    100%,
-    1000px
-  );
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-}
-
-
 .jumpscare-video {
-
   display: block;
 
   width: 100%;
-
-  max-height:
-    78vh;
-
   height: auto;
+
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+
+  object-fit: contain;
 
   background: #000;
 
@@ -796,7 +780,6 @@ body {
     15px
     45px
     rgba(0, 0, 0, 0.14);
-
 }
 
 
