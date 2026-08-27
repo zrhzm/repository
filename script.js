@@ -202,23 +202,3 @@ menuButtons.forEach((button) => {
     });
 
 });
-
-
-    /* =====================================
-       ㅗ 화면 클릭하면 홈으로 돌아오기
-    ===================================== */
-
-    menuMessage.addEventListener(
-        "click",
-        () => {
-
-            menuMessage.hidden =
-                true;
-
-            document.body.style.overflow =
-                "";
-
-        }
-    );
-
-});
