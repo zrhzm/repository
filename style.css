@@ -683,7 +683,7 @@ body {
 .donation-image-wrapper {
    position: relative;
    display: inline-block;
-   max-width: 90%;
+   max-width: 600px;
 }
 
   overflow: hidden;
