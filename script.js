@@ -14,7 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const backgroundVideo = document.querySelector(".background-video");
 
 
-  function showPage(page) {
+ let isTransitioning = false;
+
+function showPage(page) {
+
+  if (isTransitioning) {
+    return;
+  }
+
+  isTransitioning = true;
+
+  document.body.classList.add("page-transition-out");
+
+  setTimeout(function () {
 
     homePage.classList.remove("active-page");
     dummyPage.classList.remove("active-page");
@@ -25,7 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.scrollTo(0, 0);
 
-  }
+    document.body.classList.remove("page-transition-out");
+    document.body.classList.add("page-transition-in");
+
+    setTimeout(function () {
+      document.body.classList.remove("page-transition-in");
+      isTransitioning = false;
+    }, 300);
+
+  }, 250);
+
+}
 
 
   function setActive(button) {
