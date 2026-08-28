@@ -765,21 +765,22 @@ box-shadow:
    ========================================= */
 
 .donation-text {
-  position: absolute;
-  inset: 0;
+    position: absolute;
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+    top: 30%;
+    left: 0;
 
-  padding: 0;
-  padding-top: 30%;
+    width: 100%;
 
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
+    text-align: center;
 
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.38);
+    color: #fff;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    text-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.38);
 }
 
 
