@@ -210,82 +210,70 @@ body {
    HOME PAGE
    ========================================= */
 
-.home-page {
-
-  position: relative;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  min-height:
-    calc(100vh - 76px);
-
-  overflow: hidden;
-
-  isolation: isolate;
-
-}
-
-
 /* =========================================
-   BACKGROUND VIDEO
-   ========================================= */
-
-/* =========================================
-   CODE-ONLY BACKGROUND
-   영상 없이 움직이는 밝은 회색 / 흰색 곡면
+   HOME PAGE
    ========================================= */
 
 .home-page {
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 76px);
+
     overflow: hidden;
     isolation: isolate;
 
     background:
         radial-gradient(
-            ellipse at 20% 20%,
+            ellipse at 50% 40%,
             #ffffff 0%,
-            #f7f7f7 35%,
-            #ededed 70%,
-            #e5e5e5 100%
+            #f0f0f0 40%,
+            #dddddd 100%
         );
 }
 
-/* 기존 배경 영상은 사용하지 않음 */
+
+/* =========================================
+   CODE-ONLY BACKGROUND
+   ========================================= */
+
+/* 기존 배경 영상 숨김 */
 .home-page .background-video {
     display: none;
 }
 
-/* 첫 번째 거대한 곡면 */
+
+/* 왼쪽 곡면 */
 .home-page::before {
     content: "";
+
     position: absolute;
 
-    width: 85vw;
-    height: 65vh;
+    width: 90vw;
+    height: 70vh;
 
-    left: -15vw;
-    top: 8vh;
+    left: -20vw;
+    top: 5vh;
 
-    border-radius: 55% 45% 60% 40% / 45% 60% 40% 55%;
+    border-radius:
+        55% 45% 60% 40% /
+        45% 60% 40% 55%;
 
     background:
         radial-gradient(
             ellipse at center,
-            rgba(255, 255, 255, 0.98) 0%,
-            rgba(248, 248, 248, 0.90) 42%,
-            rgba(225, 225, 225, 0.72) 72%,
-            rgba(210, 210, 210, 0) 100%
+            rgba(255, 255, 255, 1) 0%,
+            rgba(245, 245, 245, 0.95) 35%,
+            rgba(205, 205, 205, 0.85) 70%,
+            rgba(180, 180, 180, 0) 100%
         );
 
-    filter: blur(18px);
-
-    transform: rotate(-8deg);
+    filter: blur(12px);
 
     animation:
         softWaveLeft
@@ -297,31 +285,33 @@ body {
     pointer-events: none;
 }
 
-/* 두 번째 곡면 */
+
+/* 오른쪽 곡면 */
 .home-page::after {
     content: "";
+
     position: absolute;
 
-    width: 90vw;
-    height: 70vh;
+    width: 95vw;
+    height: 75vh;
 
-    right: -18vw;
-    bottom: -8vh;
+    right: -20vw;
+    bottom: -10vh;
 
-    border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%;
+    border-radius:
+        40% 60% 45% 55% /
+        60% 40% 55% 45%;
 
     background:
         radial-gradient(
             ellipse at center,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(242, 242, 242, 0.85) 45%,
-            rgba(215, 215, 215, 0.65) 72%,
-            rgba(200, 200, 200, 0) 100%
+            rgba(255, 255, 255, 1) 0%,
+            rgba(235, 235, 235, 0.95) 38%,
+            rgba(195, 195, 195, 0.82) 72%,
+            rgba(170, 170, 170, 0) 100%
         );
 
-    filter: blur(22px);
-
-    transform: rotate(10deg);
+    filter: blur(14px);
 
     animation:
         softWaveRight
@@ -1013,14 +1003,6 @@ box-shadow:
 
 }
 
-.donation-image-wrapper {
-  position: relative;
-  display: inline-block;
-  max-width: 600px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
-}
 
 /* =========================================
    SOFT ORGANIC MOTION
@@ -1074,4 +1056,59 @@ box-shadow:
             rotate(-3deg)
             scale(1.12);
     }
+}
+
+/* =========================================
+   MOBILE BACKGROUND
+   ========================================= */
+
+@media (max-width: 680px) {
+
+  .home-page {
+    background:
+      radial-gradient(
+        ellipse at 50% 40%,
+        #ffffff 0%,
+        #eeeeee 42%,
+        #d2d2d2 100%
+      );
+  }
+
+  .home-page::before {
+    width: 120vw;
+    height: 80vh;
+
+    left: -45vw;
+    top: -5vh;
+
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(242, 242, 242, 0.98) 30%,
+        rgba(195, 195, 195, 0.92) 70%,
+        rgba(150, 150, 150, 0) 100%
+      );
+
+    filter: blur(10px);
+  }
+
+  .home-page::after {
+    width: 125vw;
+    height: 85vh;
+
+    right: -50vw;
+    bottom: -15vh;
+
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(230, 230, 230, 0.98) 35%,
+        rgba(180, 180, 180, 0.9) 72%,
+        rgba(140, 140, 140, 0) 100%
+      );
+
+    filter: blur(12px);
+  }
 }
