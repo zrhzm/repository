@@ -1112,3 +1112,29 @@ box-shadow:
     filter: blur(12px);
   }
 }
+
+/* =========================================
+   PAGE TRANSITION
+   ========================================= */
+
+body {
+  transition: opacity 0.25s ease;
+}
+
+body.page-transition-out {
+  opacity: 0;
+}
+
+body.page-transition-in {
+  animation: pageTransitionIn 0.3s ease;
+}
+
+@keyframes pageTransitionIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
